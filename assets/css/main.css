@@ -1,0 +1,411 @@
+/* Светлый минималистичный стиль для лендинга Лаборатории */
+
+:root {
+  /* Базовая палитра под Контур */
+  --bg-page: #f7f8fb;
+  --bg-surface: #ffffff;
+  --bg-surface-soft: #f2f4fb;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-strong: #1d4ed8;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* Токены отступов по мотивам kontur.ru */
+  --spacer-xsmall: 16px;
+  --spacer-small: 32px;
+  --spacer-medium: 40px;
+  --spacer-large: 48px;
+  --spacer-xlarge: 64px;
+  --spacer-xxlarge: 120px;
+
+  /* Высота шапки для якорных переходов */
+  --header-height: 72px;
+}
+
+html {
+  scroll-padding-top: var(--header-height);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: var(--text-main);
+  background: var(--bg-page);
+}
+
+section {
+  padding: var(--spacer-large) 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+section h1,
+section h2,
+section h3 {
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+section h1 {
+  font-size: 44px;
+  font-weight: 600;
+}
+
+section h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+section h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+section p {
+  color: var(--text-muted);
+}
+
+header {
+  padding: 0 24px;
+  min-height: var(--header-height);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 0;
+  background: rgba(247, 248, 251, 0.95);
+  backdrop-filter: blur(14px);
+  z-index: 10;
+}
+
+header nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.logo img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 24px;
+}
+
+header nav a {
+  margin-right: 0;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+  color: var(--text-main);
+}
+
+.hero {
+  padding: 72px 16px 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.hero h1 {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+.hero p {
+  margin-top: 12px;
+}
+
+/* Синяя “стрелочная” линия: Песочница → Мастерская → Центр экспертизы */
+.flow-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-strong);
+  color: var(--accent-strong);
+  font-size: 12px;
+  background: #ffffff;
+}
+
+.flow-arrow {
+  position: relative;
+  width: 32px;
+  height: 2px;
+  background: var(--accent-strong);
+}
+
+.flow-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 7px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--accent-strong);
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+}
+
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.07s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: #f9fafb;
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(58, 134, 255, 0.5);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(37, 99, 235, 0.06);
+  color: var(--accent-strong);
+}
+
+.two-cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.two-cols > * {
+  flex: 1 1 260px;
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin-top: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-clickable {
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.card-clickable:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+  background-color: var(--bg-surface-soft);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+}
+
+.entry-container {
+  border-radius: 18px;
+  padding: 20px 18px;
+  margin-top: 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  background: rgba(249, 250, 251, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.tab {
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.tab-active {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: #f9fafb;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: var(--text-main);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(154, 163, 198, 0.6);
+}
+
+.field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.radio-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.status-message {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+footer {
+  padding: 32px 16px;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  margin-top: 40px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: var(--spacer-large);
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  header nav {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  section {
+    padding: var(--spacer-medium) 16px;
+  }
+}
+
+

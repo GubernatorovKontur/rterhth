@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гайд по игре "Крестики-нолики"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .intro {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .intro h2 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .intro-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .intro-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rules-section, .strategies-section, .examples-section {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            color: #1a2a6c;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            color: #b21f1f;
+        }
+        
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .rule-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .rule-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .rule-icon {
+            font-size: 2.5rem;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+        }
+        
+        .rule-card h3 {
+            color: #b21f1f;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .strategy-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .strategy-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .strategy-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .strategy-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .examples-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        .example-card h3 {
+            color: #b21f1f;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .example-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .example-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            background-color: #1a2a6c;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .cell {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .cell.x {
+            color: #b21f1f;
+        }
+        
+        .cell.o {
+            color: #1a2a6c;
+        }
+        
+        .play-section {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .play-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            font-size: 1.3rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0 10px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .intro-content, .strategies-grid, .rules-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-gamepad"></i> Крестики-нолики</h1>
+            <p>Исчерпывающий гайд по классической игре. Узнайте правила, стратегии и станьте непобедимым игроком!</p>
+        </header>
+        
+        <section class="intro">
+            <h2>Что такое "Крестики-нолики"?</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p><strong>Крестики-нолики</strong> — логическая игра для двух игроков на квадратном поле 3×3. Один игрок играет "крестиками", второй — "ноликами".</p>
+                    <p>Игра известна с древних времён, её аналоги найдены в археологических памятниках Древнего Египта и Римской империи.</p>
+                    <p>Несмотря на простые правила, игра содержит глубокие стратегические элементы и является отличной тренировкой логического мышления.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMmE2YyIvPgogIDxsaW5lIHgxPSI1MCIgeTE9IjUwIiB4Mj0iMzUwIiB5Mj0iMjUwIiBzdHJva2U9IiNkZGIyMWYiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8bGluZSB4MT0iMzUwIiB5MT0iNTAiIHgyPSI1MCIgeTI9IjI1MCIgc3Ryb2tlPSIjZGRiMjFmIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMjUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRmYjJkIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo=" alt="Крестики-нолики">
+                </div>
+            </div>
+        </section>
+        
+        <section class="rules-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> Основные правила игры</h2>
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-border-all"></i>
+                    </div>
+                    <h3>Игровое поле</h3>
+                    <p>Поле состоит из 9 клеток, расположенных в виде квадрата 3×3. Игроки по очереди ставят свои знаки в свободные клетки.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Игроки</h3>
+                    <p>Первый игрок ставит "крестики" (X), второй — "нолики" (O). Право первого хода обычно определяется жребием.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h3>Цель игры</h3>
+                    <p>Первым выстроить в ряд 3 своих знака по вертикали, горизонтали или диагонали. Если все клетки заполнены, но ряд не собран — ничья.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="strategies-section">
+            <h2 class="section-title"><i class="fas fa-chess-board"></i> Стратегии и тактики</h2>
+            <div class="strategies-grid">
+                <div class="strategy-card">
+                    <div class="strategy-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y1ZjVmNSIvPgogIDx0ZXh0IHg9IjE3NSIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYTJhNmMiPkNlbnRyYWx+bmF5YSBzdHJhdGVneWE8L3RleHQ+Cjwvc3ZnPgo=" alt="Центральная стратегия">
+                    </div>
+                    <h3>Занимайте центр</h3>
+                    <p>Центральная клетка даёт максимальные возможности — от неё можно строить линии в 4 направлениях. Если вы ходите первым, всегда начинайте с центра.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y1ZjVmNSIvPgogIDx0ZXh0IHg9IjE3NSIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNiMjFmMWYiPkZvcmtpcm92YX5+eWEgdGFrdGlrYTwvdGV4dD4KPC9zdmc+Cg==" alt="Вилка">
+                    </div>
+                    <h3>Создавайте "вилки"</h3>
+                    <p>"Вилка" — ситуация, когда у вас есть две линии с двумя вашими знаками, и противник не может заблокировать обе одновременно. Создание "вилки" почти гарантирует победу.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzUwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y1ZjVmNSIvPgogIDx0ZXh0IHg9IjE3NSIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZGJiMmQiPkJsb2tpcm92YW5pZSBwcm90aXZuaWthPC90ZXh0Pgo8L3N2Zz4K" alt="Блокировка">
+                    </div>
+                    <h3>Блокируйте противника</h3>
+                    <p>Всегда следите за ходами оппонента. Если у него появилась линия с двумя знаками, немедленно ставьте свой знак в оставшуюся клетку этой линии.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="examples-section">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Примеры игровых ситуаций</h2>
+            <div class="examples-container">
+                <div class="example-card">
+                    <h3>Выигрышная комбинация</h3>
+                    <p>Три крестика по диагонали — классическая победа. Заметив такую возможность, немедленно используйте её.</p>
+                    <div class="example-image">
+                        <div class="game-board">
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell x">X</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <h3>Ничья (пат)</h3>
+                    <p>Когда все клетки заполнены, но ни один из игроков не собрал линию из трёх знаков, объявляется ничья.</p>
+                    <div class="example-image">
+                        <div class="game-board">
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell x">X</div>
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <h3>Создание "вилки"</h3>
+                    <p>Крестик в центре и два по углам создают "вилку" — у ноликов нет возможности заблокировать обе угрозы одновременно.</p>
+                    <div class="example-image">
+                        <div class="game-board">
+                            <div class="cell x">X</div>
+                            <div class="cell o">O</div>
+                            <div class="cell"></div>
+                            <div class="cell o">O</div>
+                            <div class="cell x">X</div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell x">X</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="play-section">
+            <h2 class="section-title"><i class="fas fa-play-circle"></i> Готовы сыграть?</h2>
+            <p>Теперь, когда вы знаете правила и стратегии, пришло время применить знания на практике!</p>
+            <p>Сыграйте в "Крестики-нолики" с другом или против компьютера, чтобы отточить свои навыки.</p>
+            <a href="#" class="play-btn">Играть сейчас</a>
+        </section>
+        
+        <footer>
+            <p>© 2023 Гайд по игре "Крестики-нолики". Все права защищены.</p>
+            <p>Этот сайт создан в образовательных целях.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Простая интерактивная демонстрация игры
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameBoards = document.querySelectorAll('.game-board');
+            
+            gameBoards.forEach(board => {
+                const cells = board.querySelectorAll('.cell:empty');
+                cells.forEach(cell => {
+                    cell.addEventListener('click', function() {
+                        if (!this.textContent) {
+                            this.textContent = Math.random() > 0.5 ? 'X' : 'O';
+                            this.classList.add(this.textContent.toLowerCase());
+                        }
+                    });
+                });
+            });
+            
+            // Анимация для кнопки "Играть сейчас"
+            const playBtn = document.querySelector('.play-btn');
+            playBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('В реальном проекте здесь была бы ссылка на игру. Спасибо за интерес!');
+            });
+        });
+    </script>
+</body>
+</html>

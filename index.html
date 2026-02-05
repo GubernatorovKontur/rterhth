@@ -2,63 +2,63 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Лаборатория Контура — идеи сотрудников → решения для бизнеса</title>
+  <title>Лаборатория Практик ДПРК</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/images/avatar.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-  <!-- Хедер / якорное меню -->
-  <header>
-    <nav>
-      <a href="#first-screen" class="logo">
-        <img src="assets/images/logo-kontur-24@2x.png" alt="Контур" />
-      </a>
-      <div class="nav-links">
-        <a href="#who-we-are">Кто мы</a>
-        <a href="#for-whom">Для кого</a>
-        <a href="#what-you-bring">С чем прийти</a>
-        <a href="#examples">Примеры решений</a>
-        <a href="#entry">Подать заявку</a>
-        <a href="bank.html">Банк инициатив</a>
-        <a href="solutions.html">Готовые решения</a>
-        <a href="#contacts">Контакты</a>
-      </div>
-    </nav>
-  </header>
-
   <!-- 1. Первый экран -->
   <section id="first-screen" class="hero">
-    <div>
-      <h1>Лаборатория Контура: идеи сотрудников → решения для бизнеса</h1>
+    <div class="hero-main">
+      <h1>Лаборатория Практик ДПРК</h1>
       <p>
         Приноси идею, кейс или лайфхак — поможем дорастить, проверить и масштабировать.
         Если ты заказчик — поможем подобрать готовое решение или собрать новое.
       </p>
-      <div class="flow-line">
-        <div class="flow-node">Песочница</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node">Мастерская</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node">Центр экспертизы</div>
-      </div>
-      <div class="buttons-row">
-        <button class="btn btn-primary" data-scroll="#what-you-bring" data-role="from-hero-employee">
-          У меня есть идея / кейс / лайфхак
-        </button>
-        <button class="btn btn-primary" data-scroll="#customer-request" data-role="from-hero-customer">
-          Я заказчик, хочу решение
-        </button>
-        <button class="btn btn-ghost" type="button" id="btn-ready-solutions-hero">
-          Посмотреть каталог готовых решений
-        </button>
-      </div>
     </div>
-    <div class="hero-visual">
-      <!-- сюда можно положить иллюстрацию Лаборатории; сейчас — заглушка -->
-      <img src="assets/images/lab-hero.svg" alt="Визуал экосистемы Лаборатории Контура" onerror="this.style.display='none'" />
+    <div class="hero-tiles">
+      <a href="#who-we-are" class="tile tile-nav">
+        <strong>Кто мы</strong>
+        <p class="small">О Лаборатории и экосистеме</p>
+      </a>
+      <a href="#for-whom" class="tile tile-nav">
+        <strong>Для кого</strong>
+        <p class="small">Сотрудники и заказчики</p>
+      </a>
+      <a href="#what-you-bring" class="tile tile-nav">
+        <strong>С чем прийти</strong>
+        <p class="small">Типы входов в систему</p>
+      </a>
+      <a href="#examples" class="tile tile-nav">
+        <strong>Примеры</strong>
+        <p class="small">Форматы решений</p>
+      </a>
+      <a href="bank.html" class="tile tile-nav tile-featured">
+        <strong>Банк инициатив</strong>
+        <p class="small">Идеи в работе</p>
+      </a>
+      <a href="solutions.html" class="tile tile-nav tile-featured">
+        <strong>Готовые решения</strong>
+        <p class="small">Магазин решений</p>
+      </a>
+      <a href="#contacts" class="tile tile-nav">
+        <strong>Контакты</strong>
+        <p class="small">Связаться с нами</p>
+      </a>
+      <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="tile tile-accent" aria-label="Вход в Песочницу — подать заявку на идею или кейс">
+        <div>
+          <span class="badge">Главный вход</span>
+          <h3>Вход в Песочницу</h3>
+          <p class="small">
+            Расскажи о своей идее, кейсе или лайфхаке — мы зарегистрируем заявку и подберём маршрут.
+          </p>
+        </div>
+        <span class="tile-accent-cta">Подать заявку</span>
+      </a>
     </div>
   </section>
 
@@ -66,33 +66,34 @@
   <section id="who-we-are">
     <h2>Кто мы простыми словами</h2>
     <p>
-      Лаборатория Контура — внутренняя экосистема, которая помогает сотрудникам принести идею или кейс,
-      проверить её на практике и масштабировать, а заказчикам — найти и внедрить готовое или новое решение под задачу.
+      Лаборатория Практик ДПРК — внутренняя экосистема, которая помогает:
+      — сотрудникам принести идею или кейс, проверить её на практике и масштабировать;
+      — заказчикам найти и внедрить готовое или новое решение под свою задачу.
     </p>
     <div class="two-cols">
       <div>
-        <div class="card">
+        <div class="card has-bg">
           <strong>Песочница</strong>
           <p class="small">
-            Единая точка входа и банк инициатив. Сюда попадают все идеи, кейсы и запросы.
+            Единая точка входа и Банк инициатив: сюда попадают все идеи, кейсы и запросы.
           </p>
         </div>
-        <div class="card">
+        <div class="card has-bg">
           <strong>Мастерская</strong>
           <p class="small">
-            Исполнительный хаб быстрого прототипирования. Здесь идеи за 1–2 недели превращаются в MVP.
+            Исполнительный хаб быстрого прототипирования: здесь идеи превращаются в MVP за 1–2 недели по описанному в LAB процессу "Процесс разработки".
           </p>
         </div>
       </div>
       <div>
-        <div class="card">
-          <strong>Центр экспертизы</strong>
+        <div class="card has-bg">
+          <strong>Хранилище практик</strong>
           <p class="small">
-            Хранилище знаний и магазин готовых решений. Здесь можно найти «А не делали ли мы это уже?» и взять готовое.
+            Хранилище знаний и Магазин готовых решений: сюда попадают реализованные проекты и готовые решения, которые можно переиспользовать.
           </p>
         </div>
         <div class="card">
-          <span class="badge">Инфраструктура</span>
+          <strong>Инфраструктура</strong>
           <p class="small">
             ИИ‑инструменты, автоматизация процессов, аналитика — Dify, n8n, BI / ClickHouse, GitLab, Figma и другие.
           </p>
@@ -100,9 +101,9 @@
       </div>
     </div>
     <div style="margin-top:16px;">
-      <button class="btn btn-ghost" data-scroll="#entry" data-role="from-who-employee">
+      <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
         Подать идею / кейс
-      </button>
+      </a>
     </div>
   </section>
 
@@ -110,27 +111,30 @@
   <section id="for-whom">
     <h2>Для кого Лаборатория</h2>
     <div class="two-cols">
-      <div class="card">
-        <h3>Для сотрудников</h3>
-        <p>
-          Хочешь принести идею, кейс или лайфхак — заходи в Песочницу. Поможем упаковать, дорастить и запустить.
-        </p>
-        <button class="btn btn-primary" data-scroll="#entry" data-role="from-forwhom-employee">
-          Перейти в Песочницу
-        </button>
+      <div>
+        <div class="card has-bg">
+          <h3>Для сотрудников</h3>
+          <p>
+            Хочешь принести идею, кейс или лайфхак — заходи в Песочницу. Поможем упаковать, дорастить и запустить.
+          </p>
+        </div>
+        <div style="margin-top: 16px;">
+          <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Перейти в Песочницу
+          </a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Для заказчиков</h3>
-        <p>
-          Хочешь внедрить что‑то у себя — поможем подобрать готовый кейс, типовое решение или собрать MVP под твой запрос.
-        </p>
-        <div class="buttons-row">
-          <button class="btn btn-ghost" type="button" id="btn-ready-solutions-forwhom">
-            Каталог решений
-          </button>
-          <button class="btn btn-primary" data-scroll="#customer-request" data-role="from-forwhom-customer">
+      <div>
+        <div class="card has-bg">
+          <h3>Для заказчиков</h3>
+          <p>
+            Хочешь внедрить что‑то у себя — поможем подобрать готовый кейс, типовое решение или собрать MVP под твой запрос.
+          </p>
+        </div>
+        <div style="margin-top: 16px;">
+          <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             Оставить запрос на решение
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -165,51 +169,38 @@
       </p>
     </div>
     <p class="small" style="margin-top:12px;">
-      Перед подачей заявки можно заглянуть в
-      <a href="#" id="link-bank-ideas" target="_blank" rel="noopener noreferrer">Банк инициатив</a> — вдруг похожая идея уже есть.
+      Перед подачей заявки можно заглянуть в Банк инициатив — вдруг похожая идея уже есть.
     </p>
-    <button class="btn btn-primary" data-scroll="#entry" data-role="from-whatyoubring">
+    <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
       Расскажи нам, что у тебя есть
-    </button>
+    </a>
   </section>
 
-  <!-- 5. Запрос на решение (для заказчиков) -->
-  <section id="customer-request">
-    <h2>Запрос на решение для заказчиков</h2>
-    <p>
-      Если у тебя есть задача и ты хочешь решение под неё — опиши свой запрос. Мы поможем подобрать готовое решение
-      из Центра экспертизы или собрать MVP под задачу.
-    </p>
-    <button class="btn btn-primary" data-scroll="#entry" data-role="from-customerrequest">
-      Оставить запрос на решение
-    </button>
-  </section>
-
-  <!-- 6. Что будет дальше -->
+  <!-- 5. Что будет дальше -->
   <section id="what-next">
     <h2>Что будет дальше с твоей идеей или запросом</h2>
     <ol>
       <li>Ты заполняешь короткую форму (2–3 минуты).</li>
-      <li>В течение 24 часов заявка регистрируется, ей присваивают номер, назначают эксперта, приходят первые баллы.</li>
-      <li>В течение 3 рабочих дней эксперт выбирает маршрут: Мастерская / Центр экспертизы / профильное подразделение / Банк идей.</li>
-      <li>Ты всегда знаешь, что происходит: письмо, номер заявки, контакты координатора.</li>
+      <li>В течение 24 часов: заявка регистрируется в системе Песочницы, идее присваивается номер, назначается эксперт, ты получаешь письмо на почту с подтверждением и первыми деталями, сотруднику начисляется +5 очков за подачу инициативы.</li>
+      <li>В течение 3 рабочих дней: эксперт оценивает идею/запрос по критериям из LAB (7 критериев: стратегия, эффект, реализуемость, инновационность, ресурсы, команда, риски) и выбирает маршрут: Мастерская / Центр экспертизы / профильное подразделение / Банк идей.</li>
+      <li>Ты всегда знаешь, что происходит: письмо с результатом первичной оценки, информация о следующем шаге (встреча / выбор решения / запуск MVP), контакт координатора, к кому можно обратиться с вопросами.</li>
     </ol>
     <p>
       Мы не забираем идеи и запросы в пустоту — у каждой заявки есть понятный маршрут и обратная связь.
     </p>
-    <button class="btn btn-primary" data-scroll="#entry" data-role="from-whatnext">
+    <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
       Подать заявку
-    </button>
+    </a>
   </section>
 
   <!-- 7. Чем мы можем помочь -->
   <section id="help-we-provide">
     <h2>Чем мы можем помочь</h2>
     <ul>
-      <li><strong>Помогаем упаковать идею / запрос.</strong> Сформулировать ценность, выбрать формат пилота и метрики.</li>
-      <li><strong>Дорабатываем вместе.</strong> Подключаем экспертов, ИИ‑инструменты, автоматизацию и аналитику.</li>
-      <li><strong>Быстро запускаем пилот / MVP.</strong> Мастерская собирает и тестирует решения за 1–2 недели.</li>
-      <li><strong>Масштабируем успешные решения.</strong> Передаём кейсы в Центр экспертизы и помогаем внедрять в других командах.</li>
+      <li><strong>Помогаем упаковать идею / запрос.</strong> Сформулировать ценность, выбрать формат пилота, определить метрики успеха.</li>
+      <li><strong>Дорабатываем вместе.</strong> Подключаем экспертов, инфраструктуру (ИИ, автоматизация, аналитика) и процессы из Мастерской.</li>
+      <li><strong>Быстро запускаем пилот / MVP.</strong> Разработка и тестирование решения в Мастерской за 1–2 недели по описанному процессу (получение идеи → ТЗ → разработка MVP → безопасное тестирование).</li>
+      <li><strong>Масштабируем успешные решения.</strong> Помогаем перевести прототипы и кейсы в готовые продукты, которые попадают в Центр экспертизы и Магазин готовых решений, чтобы их могли использовать другие подразделения и заказчики.</li>
     </ul>
   </section>
 
@@ -248,113 +239,11 @@
     </div>
   </section>
 
-  <!-- 9. Основной блок заявки: Вход в Песочницу -->
-  <section id="entry">
-    <h2>Вход в Песочницу: подать идею, кейс или запрос на решение</h2>
-    <p>
-      Заполни короткую форму — мы зарегистрируем заявку, назначим эксперта и вернёмся с предложением по следующему шагу.
-    </p>
-
-    <div class="entry-container">
-      <!-- Переключатель "Кто вы?" -->
-      <div class="tabs" id="who-tabs">
-        <button class="tab tab-active" type="button" data-who="employee">Я приношу идею / кейс / лайфхак</button>
-        <button class="tab" type="button" data-who="customer">Я заказчик, хочу решение</button>
-      </div>
-
-      <!-- Форма сотрудника -->
-      <div id="employee-form">
-        <p class="small">
-          Расскажи нам о своей идее, кейсе или лайфхаке. На следующем шаге мы перенаправим тебя в форму Песочницы для финальной подачи.
-        </p>
-        <div class="field">
-          <label>С чем ты пришёл?</label>
-          <div class="radio-row" id="employee-type-radios">
-            <label><input type="radio" name="employee-entry-type" value="idea-raw" /> Идея, которую нужно доработать</label>
-            <label><input type="radio" name="employee-entry-type" value="idea-ready" /> Идея, готовая к запуску</label>
-            <label><input type="radio" name="employee-entry-type" value="case" /> Успешный кейс с результатом</label>
-            <label><input type="radio" name="employee-entry-type" value="lifehack" /> Лайфхак / маленькое улучшение</label>
-          </div>
-        </div>
-        <div class="field">
-          <label for="employee-what">Что это? <span class="small">(2–3 предложения)</span></label>
-          <textarea id="employee-what"></textarea>
-        </div>
-        <div class="field">
-          <label for="employee-value">В чём польза?</label>
-          <textarea id="employee-value"></textarea>
-        </div>
-        <div class="field">
-          <label for="employee-target">Для кого это?</label>
-          <input type="text" id="employee-target" />
-        </div>
-        <div class="field">
-          <label for="employee-status">Какой сейчас статус?</label>
-          <input type="text" id="employee-status" placeholder="Только идея / уже попробовали / есть результат" />
-        </div>
-        <div class="field">
-          <label><input type="checkbox" id="employee-has-team" /> У меня есть команда для реализации</label><br />
-          <label><input type="checkbox" id="employee-will-participate" /> Я готов участвовать в реализации</label>
-        </div>
-        <button class="btn btn-primary" type="button" id="btn-employee-continue">
-          Продолжить подачу
-        </button>
-        <p class="small" style="margin-top:8px;">
-          На следующем шаге откроется staff‑форма Песочницы. Ты сможешь перенести туда текст и при необходимости дополнить поля.
-        </p>
-        <div class="status-message small" id="employee-status-message"></div>
-      </div>
-
-      <!-- Форма заказчика -->
-      <div id="customer-form" style="display:none;">
-        <p class="small">
-          Опиши задачу — мы подберём готовое решение из Центра экспертизы или предложим собрать MVP в Мастерской.
-        </p>
-        <div class="field">
-          <label for="customer-problem">Опиши задачу простыми словами</label>
-          <textarea id="customer-problem"></textarea>
-        </div>
-        <div class="field">
-          <label for="customer-dept">Для какого подразделения или процесса?</label>
-          <input type="text" id="customer-dept" />
-        </div>
-        <div class="field">
-          <label for="customer-pain">Что сейчас болит / что хочешь улучшить?</label>
-          <textarea id="customer-pain"></textarea>
-        </div>
-        <div class="field">
-          <label for="customer-expectation">Что ты ожидаешь?</label>
-          <select id="customer-expectation">
-            <option value="">Выбери вариант</option>
-            <option value="ready">Подобрать готовое решение</option>
-            <option value="adapt">Адаптировать существующий кейс</option>
-            <option value="mvp">Собрать новое MVP / пилот</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="customer-time">Сроки / приоритет</label>
-          <input type="text" id="customer-time" />
-        </div>
-        <div class="field">
-          <label for="customer-contact">Контакт для связи (email или Staff‑логин)</label>
-          <input type="email" id="customer-contact" />
-        </div>
-        <button class="btn btn-primary" type="button" id="btn-customer-submit">
-          Отправить запрос
-        </button>
-        <p class="small" style="margin-top:8px;">
-          После отправки мы зарегистрируем заявку, назначим ответственного и вернёмся в течение 3 рабочих дней.
-        </p>
-        <div class="status-message small" id="customer-status-message"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Контакты и доверие -->
+  <!-- 9. Контакты и доверие -->
   <section id="contacts">
     <h2>Контакты и доверие</h2>
     <p>
-      Лаборатория Контура — часть объединённого проекта с Практиками. Наша цель — не плодить дублирующие проекты,
+      Лаборатория Практик ДПРК — часть объединённого проекта с Практиками. Наша цель — не плодить дублирующие проекты,
       а находить, проверять и масштабировать лучшее.
     </p>
     <p>
@@ -372,13 +261,15 @@
     <p class="small">
       Если хочешь обсудить идею до заявки — напиши или подойди к координатору Песочницы или Мастерской.
     </p>
-    <button class="btn btn-ghost" type="button" id="btn-contact-coordinator">
-      Написать координатору
-    </button>
+    <div style="margin-top: 20px;">
+      <a href="mailto:lab-coordinator@skbkontur.ru" class="btn btn-ghost" id="btn-contact-coordinator">
+        Написать координатору
+      </a>
+    </div>
   </section>
 
   <footer>
-    Лаборатория Контура. Эта страница описывает логику входа и маршрутов. Визуал и интеграции с бэком могут быть доработаны отдельно.
+    Лаборатория Практик ДПРК. Эта страница описывает логику входа и маршрутов. Визуал и интеграции с бэком могут быть доработаны отдельно.
   </footer>
 
   <script src="assets/js/main.js"></script>

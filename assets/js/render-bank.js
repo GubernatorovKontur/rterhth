@@ -38,10 +38,17 @@ function renderBankIdeas(items) {
     if (item.link) {
       const link = document.createElement("a");
       link.href = item.link;
-      link.textContent = "Подробнее";
+      link.textContent = "Подробнее →";
       link.className = "small";
+      link.style.cssText = "color: var(--accent-strong); text-decoration: none; display: inline-block; margin-top: 8px; font-weight: 500; transition: color 0.2s ease;";
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.addEventListener("mouseenter", function() {
+        this.style.color = "var(--accent)";
+      });
+      link.addEventListener("mouseleave", function() {
+        this.style.color = "var(--accent-strong)";
+      });
       card.appendChild(link);
     }
 
@@ -49,6 +56,7 @@ function renderBankIdeas(items) {
   });
 
   container.innerHTML = "";
+  container.className = "items-grid";
   container.appendChild(list);
 }
 

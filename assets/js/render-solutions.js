@@ -37,10 +37,17 @@ function renderSolutions(items) {
     if (item.docsLink) {
       const link = document.createElement("a");
       link.href = item.docsLink;
-      link.textContent = "Подробнее о решении";
+      link.textContent = "Подробнее о решении →";
       link.className = "small";
+      link.style.cssText = "color: var(--accent-strong); text-decoration: none; display: inline-block; margin-top: 8px; font-weight: 500; transition: color 0.2s ease;";
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.addEventListener("mouseenter", function() {
+        this.style.color = "var(--accent)";
+      });
+      link.addEventListener("mouseleave", function() {
+        this.style.color = "var(--accent-strong)";
+      });
       card.appendChild(link);
     }
 
@@ -48,6 +55,7 @@ function renderSolutions(items) {
   });
 
   container.innerHTML = "";
+  container.className = "items-grid";
   container.appendChild(list);
 }
 

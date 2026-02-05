@@ -35,18 +35,17 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Кнопки "Каталог готовых решений"
+// Кнопки "Каталог готовых решений" (если есть кнопки, а не ссылки)
 const btnReadyHero = document.getElementById("btn-ready-solutions-hero");
-const btnReadyForWhom = document.getElementById("btn-ready-solutions-forwhom");
-function openReadySolutions() {
-  if (URLS.readySolutions && URLS.readySolutions !== "#") {
-    window.open(URLS.readySolutions, "_blank", "noopener");
-  } else {
-    alert("Здесь будет ссылка на Магазин готовых решений Центра экспертизы.");
-  }
+if (btnReadyHero) {
+  btnReadyHero.addEventListener("click", function() {
+    if (URLS.readySolutions && URLS.readySolutions !== "#") {
+      window.open(URLS.readySolutions, "_blank", "noopener");
+    } else {
+      alert("Здесь будет ссылка на Магазин готовых решений Центра экспертизы.");
+    }
+  });
 }
-if (btnReadyHero) btnReadyHero.addEventListener("click", openReadySolutions);
-if (btnReadyForWhom) btnReadyForWhom.addEventListener("click", openReadySolutions);
 
 // Ссылка на Банк инициатив
 const linkBankIdeas = document.getElementById("link-bank-ideas");
@@ -74,34 +73,13 @@ if (linkWikiLab) {
   });
 }
 
-// Кнопка "Написать координатору"
-const btnContactCoordinator = document.getElementById("btn-contact-coordinator");
-if (btnContactCoordinator) {
-  btnContactCoordinator.addEventListener("click", function () {
-    if (URLS.contactCoordinatorMailto) {
-      window.location.href = URLS.contactCoordinatorMailto;
-    }
-  });
-}
+// Кнопка "Написать координатору" - теперь это обычная mailto ссылка, обработчик не нужен
 
-// Карточки "С чем можно прийти" — проставляем тип и скроллим в Песочницу.
+// Карточки "С чем можно прийти" — ведут на форму
 const entryTypeCards = document.querySelectorAll(".card-clickable[data-entry-type]");
 entryTypeCards.forEach(function (card) {
   card.addEventListener("click", function () {
-    const type = card.getAttribute("data-entry-type");
-    // Скроллим к форме
-    smoothScrollTo("#entry");
-    setWho("employee");
-    // Проставляем radio
-    const radiosContainer = document.getElementById("employee-type-radios");
-    if (radiosContainer) {
-      const radio = radiosContainer.querySelector(
-        'input[name="employee-entry-type"][value="' + type + '"]'
-      );
-      if (radio) {
-        radio.checked = true;
-      }
-    }
+    window.open("https://forms.kontur.ru/form/ee9b7thqv7", "_blank", "noopener noreferrer");
   });
 });
 

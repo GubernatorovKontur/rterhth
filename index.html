@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Перейти к содержанию</a>
   <!-- 1. Первый экран -->
-  <section id="first-screen" class="hero">
+  <main id="main-content">
+  <section id="first-screen" class="hero anchor-section">
     <div class="hero-main">
       <h1>Лаборатория Практик ДПРК</h1>
       <p>
@@ -38,12 +40,12 @@
         <p class="small">Форматы решений</p>
       </a>
       <a href="bank.html" class="tile tile-nav tile-featured">
-        <strong>Банк инициатив</strong>
+        <strong>Банк инициатив Лаборатории Практик ДПРК</strong>
         <p class="small">Идеи в работе</p>
       </a>
       <a href="solutions.html" class="tile tile-nav tile-featured">
-        <strong>Готовые решения</strong>
-        <p class="small">Магазин решений</p>
+        <strong>Магазин готовых решений</strong>
+        <p class="small">Кейсы, лайфхаки и наработки</p>
       </a>
       <a href="#contacts" class="tile tile-nav">
         <strong>Контакты</strong>
@@ -63,11 +65,15 @@
   </section>
 
   <!-- 2. Кто мы -->
-  <section id="who-we-are">
+  <section id="who-we-are" class="anchor-section">
     <h2>Кто мы простыми словами</h2>
     <p>
       Лаборатория Практик ДПРК — внутренняя экосистема, которая помогает:
+    </p>
+    <p>
       — сотрудникам принести идею или кейс, проверить её на практике и масштабировать;
+    </p>
+    <p>
       — заказчикам найти и внедрить готовое или новое решение под свою задачу.
     </p>
     <div class="two-cols">
@@ -87,9 +93,9 @@
       </div>
       <div>
         <div class="card has-bg">
-          <strong>Хранилище практик</strong>
+          <strong>Магазин готовых решений</strong>
           <p class="small">
-            Хранилище знаний и Магазин готовых решений: сюда попадают реализованные проекты и готовые решения, которые можно переиспользовать.
+            Внутри разделены кейсы МРЦ, лайфхаки МРЦ и наработки Лаборатории — реализованные проекты и готовые решения, которые можно переиспользовать.
           </p>
         </div>
         <div class="card">
@@ -100,15 +106,10 @@
         </div>
       </div>
     </div>
-    <div style="margin-top:16px;">
-      <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-        Подать идею / кейс
-      </a>
-    </div>
   </section>
 
   <!-- 3. Для кого -->
-  <section id="for-whom">
+  <section id="for-whom" class="anchor-section">
     <h2>Для кого Лаборатория</h2>
     <div class="two-cols">
       <div>
@@ -118,11 +119,6 @@
             Хочешь принести идею, кейс или лайфхак — заходи в Песочницу. Поможем упаковать, дорастить и запустить.
           </p>
         </div>
-        <div style="margin-top: 16px;">
-          <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Перейти в Песочницу
-          </a>
-        </div>
       </div>
       <div>
         <div class="card has-bg">
@@ -131,53 +127,46 @@
             Хочешь внедрить что‑то у себя — поможем подобрать готовый кейс, типовое решение или собрать MVP под твой запрос.
           </p>
         </div>
-        <div style="margin-top: 16px;">
-          <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Оставить запрос на решение
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- 4. С чем можно прийти -->
-  <section id="what-you-bring">
+  <section id="what-you-bring" class="anchor-section">
     <h2>С чем можно прийти</h2>
-    <p>Вот какие типы входа в Лабораторию мы ожидаем. Выбери то, что ближе всего к твоей ситуации.</p>
-    <div class="card card-clickable" data-entry-type="idea-raw">
-      <strong>Идея, которую надо доработать</strong>
-      <p class="small">
-        У меня есть мысль, но нет готового плана. Хочу понять, как это можно реализовать.
-      </p>
-    </div>
-    <div class="card card-clickable" data-entry-type="idea-ready">
-      <strong>Идея, готовая к запуску</strong>
-      <p class="small">
-        У меня есть продуманная идея, я понимаю, что примерно нужно. Нужна помощь с запуском / пилотом.
-      </p>
-    </div>
-    <div class="card card-clickable" data-entry-type="case">
-      <strong>Успешный кейс с результатом</strong>
-      <p class="small">
-        Мы уже что‑то сделали у себя, это сработало, есть результат. Хочу поделиться и/или масштабировать.
-      </p>
-    </div>
-    <div class="card card-clickable" data-entry-type="lifehack">
-      <strong>Лайфхак / маленькое улучшение</strong>
-      <p class="small">
-        Есть небольшой приём, скрипт или подход, который здорово сработал. Хочу, чтобы узнали другие.
-      </p>
+    <div class="what-you-bring-grid">
+      <div class="card has-bg">
+        <strong>Идея, которую надо доработать</strong>
+        <p class="small">
+          У меня есть мысль, но нет готового плана. Хочу понять, как это можно реализовать.
+        </p>
+      </div>
+      <div class="card has-bg">
+        <strong>Идея, готовая к запуску</strong>
+        <p class="small">
+          У меня есть продуманная идея, я понимаю, что примерно нужно. Нужна помощь с запуском / пилотом.
+        </p>
+      </div>
+      <div class="card has-bg">
+        <strong>Успешный кейс с результатом</strong>
+        <p class="small">
+          Мы уже что‑то сделали у себя, это сработало, есть результат. Хочу поделиться и/или масштабировать.
+        </p>
+      </div>
+      <div class="card has-bg">
+        <strong>Лайфхак / маленькое улучшение</strong>
+        <p class="small">
+          Есть небольшой приём, скрипт или подход, который здорово сработал. Хочу, чтобы узнали другие.
+        </p>
+      </div>
     </div>
     <p class="small" style="margin-top:12px;">
-      Перед подачей заявки можно заглянуть в Банк инициатив — вдруг похожая идея уже есть.
+      Перед подачей заявки можно заглянуть в Банк инициатив Лаборатории Практик ДПРК — вдруг похожая идея уже есть.
     </p>
-    <a href="https://forms.kontur.ru/form/ee9b7thqv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-      Расскажи нам, что у тебя есть
-    </a>
   </section>
 
   <!-- 5. Что будет дальше -->
-  <section id="what-next">
+  <section id="what-next" class="anchor-section">
     <h2>Что будет дальше с твоей идеей или запросом</h2>
     <ol>
       <li>Ты заполняешь короткую форму (2–3 минуты).</li>
@@ -194,7 +183,7 @@
   </section>
 
   <!-- 7. Чем мы можем помочь -->
-  <section id="help-we-provide">
+  <section id="help-we-provide" class="anchor-section">
     <h2>Чем мы можем помочь</h2>
     <ul>
       <li><strong>Помогаем упаковать идею / запрос.</strong> Сформулировать ценность, выбрать формат пилота, определить метрики успеха.</li>
@@ -205,8 +194,11 @@
   </section>
 
   <!-- 8. Примеры форматов решений -->
-  <section id="examples">
+  <section id="examples" class="anchor-section">
     <h2>Истории и примеры форматов решений</h2>
+    <p class="small" style="margin-bottom: 16px;">
+      Подробные кейсы и лайфхаки — в <a href="solutions.html">Магазине готовых решений</a>.
+    </p>
     <div class="card">
       <strong>Обучающие тренажёры и симуляторы</strong>
       <p class="small">
@@ -240,34 +232,31 @@
   </section>
 
   <!-- 9. Контакты и доверие -->
-  <section id="contacts">
+  <section id="contacts" class="anchor-section">
     <h2>Контакты и доверие</h2>
     <p>
-      Лаборатория Практик ДПРК — часть объединённого проекта с Практиками. Наша цель — не плодить дублирующие проекты,
-      а находить, проверять и масштабировать лучшее.
+      Наша цель — не плодить дублирующие проекты, а находить, проверять и масштабировать лучшее.
     </p>
     <p>
       Лучший проект — тот, который не надо делать заново. Если решение уже есть — мы поможем его найти и применить.
       Если нет — поможем быстро собрать и проверить новое.
     </p>
     <p class="small">
-      Почта Лаборатории / Практик:
-      <a href="mailto:lab@skbkontur.ru">lab@skbkontur.ru</a> (пример, заменить на актуальный адрес).
+      Почта Лаборатории Практик ДПРК:
+      <a href="mailto:praktiki@skbkontur.ru">praktiki@skbkontur.ru</a>
+    </p>
+    <p class="small">
+      Если хочешь обсудить идею до заявки — напиши <a href="mailto:praktiki@skbkontur.ru">Губернаторов Данила</a>.
+      Если хочешь обсудить кейс или лайфхак перед заполнением заявки — <a href="mailto:praktiki@skbkontur.ru">Скорнякова Анна</a>.
     </p>
     <p class="small">
       Вики / пространство LAB:
       <a href="#" id="link-wiki-lab" target="_blank" rel="noopener noreferrer">Открыть Wiki Лаборатории</a>
     </p>
-    <p class="small">
-      Если хочешь обсудить идею до заявки — напиши или подойди к координатору Песочницы или Мастерской.
-    </p>
-    <div style="margin-top: 20px;">
-      <a href="mailto:lab-coordinator@skbkontur.ru" class="btn btn-ghost" id="btn-contact-coordinator">
-        Написать координатору
-      </a>
-    </div>
+    <!-- Если заказчики могут отслеживать ход решения на открытой доске в Jira — добавьте сюда ссылку -->
   </section>
 
+  </main>
   <footer>
     Лаборатория Практик ДПРК. Эта страница описывает логику входа и маршрутов. Визуал и интеграции с бэком могут быть доработаны отдельно.
   </footer>

@@ -75,13 +75,7 @@ if (linkWikiLab) {
 
 // Кнопка "Написать координатору" - теперь это обычная mailto ссылка, обработчик не нужен
 
-// Карточки "С чем можно прийти" — ведут на форму
-const entryTypeCards = document.querySelectorAll(".card-clickable[data-entry-type]");
-entryTypeCards.forEach(function (card) {
-  card.addEventListener("click", function () {
-    window.open("https://forms.kontur.ru/form/ee9b7thqv7", "_blank", "noopener noreferrer");
-  });
-});
+// Карточки "С чем можно прийти" — теперь ссылки <a>, навигация нативная
 
 // Переключатель "Кто вы?"
 const whoTabs = document.getElementById("who-tabs");
